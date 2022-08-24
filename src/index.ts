@@ -1,0 +1,3 @@
+export {
+  ClipboardPaste
+} from './copyandpaste'
