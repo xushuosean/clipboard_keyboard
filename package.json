@@ -1,11 +1,11 @@
 {
   "name": "clipboard_keyboard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.mjs",
   "browser": "dist/index.browser.js",
-  "repository": "https://github.com/xushuosean/copy_and_paste",
+  "repository": "https://github.com/xushuosean/clipboard_keyboard",
   "types": "dist/types/copyandpaste.d.ts",
   "scripts": {
     "build": "rollup -c",
@@ -16,8 +16,8 @@
   "dependencies": {
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rxjs": "^7.5.6"
+    "onfire.js": "^2.0.1",
+    "rollup-plugin-node-resolve": "^5.2.0"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.3",
