@@ -1,9 +1,9 @@
 # clipboard_keyboard
 
-## Install
+## 安装
 > npm i --save clipboard_keyboard
 
-## Usage
+## 使用
 ```typescript
 
 const pasteRef = useRef<ClipboardPaste>();
@@ -25,13 +25,13 @@ useEffect(() => {
 
 ```
 ## API
-just three APIs
+仅有三个API
 
 - setCopyValue(value: string)
 - getPasteValue(): string
 - dispose(): void     remove event listener
 ## Why
-As you see,if you want to use the package, you must add event listener to the keydown,and key will be 'c' or
- 'v'.
-You can read clipboard by this package
+如你所见，如果你想要使用这个库，必须监听keydown事件，并且evt.key的值是'c'或者'v'。
+
+你可以通过这个库获取到剪切板中的数据。
 
