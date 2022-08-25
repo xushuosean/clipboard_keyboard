@@ -1,5 +1,7 @@
 # clipboard_keyboard
 
+[中文文档](./README_ZH.md) | [English Doc](./README.md)
+
 ## Install
 > npm i --save clipboard_keyboard
 
