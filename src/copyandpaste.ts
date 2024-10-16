@@ -92,21 +92,22 @@ export class ClipboardPaste implements IDispose {
   }
 
   private onPaste() {
+    const val = this.textInput.value;
     this.textInput.value = ''
     setTimeout(() => {
-      this.PasteValue$.fire(PASTE, this.textInput.value)
+      this.PasteValue$.fire(PASTE, val)
     }, 0);
     this.textInput.select();
   }
 
   private init() {
-    document.addEventListener(EventType.KEYDOWN, this.onKeydown)
+    document.addEventListener(EventType.KEYDOWN, this.onKeydown.bind(this))
 
-    document.addEventListener(EventType.KEYUP, this.onKeyup)
+    document.addEventListener(EventType.KEYUP, this.onKeyup.bind(this))
 
-    document.addEventListener(EventType.COPY, this.onCopy)
+    document.addEventListener(EventType.COPY, this.onCopy.bind(this))
 
-    document.addEventListener(EventType.PASTE, this.onPaste)
+    document.addEventListener(EventType.PASTE, this.onPaste.bind(this))
   }
 
   private initTextInput() {

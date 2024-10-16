@@ -9,7 +9,9 @@
   "types": "dist/types/copyandpaste.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "build:types": "tsc"
+    "build:types": "tsc",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "author": "Sean",
   "license": "MIT",
@@ -23,9 +25,13 @@
     "@rollup/plugin-typescript": "^8.3.3",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
+    "element-ui": "^2.15.14",
     "eslint": ">=5.16.0",
     "eslint-config-google": "^0.14.0",
+    "less": "^4.2.0",
+    "less-loader": "7.3.0",
     "rollup": "^2.77.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "vuepress": "^1.9.10"
   }
 }
