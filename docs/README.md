@@ -1,3 +1,5 @@
 # 介绍
 
-<Normal />
+<ClientOnly>
+  <Normal />
+</ClientOnly
