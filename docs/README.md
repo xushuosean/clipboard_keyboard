@@ -31,3 +31,48 @@
 <ClientOnly>
   <Normal />
 </ClientOnly>
+
+
+```vue
+<template>
+  <div class="normal">
+    <div class="normal_left">
+      <el-checkbox-group v-model="checkList">
+        <el-checkbox v-for="item in leftLists" :label="item"></el-checkbox>
+      </el-checkbox-group>
+    </div>
+    <div class="normal_right">
+      <el-checkbox v-for="item in rightList" :label="item"></el-checkbox>
+    </div>
+  </div>
+</template>
+
+<script>
+import { ClipboardPaste } from 'clipboard_keyboard'
+
+const clipboard = new ClipboardPaste()
+export default {
+  data() {
+    return {
+      leftLists: [1,2,3,4,5],
+      rightList: [],
+      checkList: [],
+    }
+  },
+  created() {
+    document.addEventListener('keydown', (evt) => {
+      if (!(evt.ctrlKey || evt.metaKey)) return
+      if (evt.key === 'c') {
+        const data = JSON.stringify(this.checkList)
+        clipboard?.setCopyValue(data);
+        this.$message.success('复制成功！' + data)
+      } else if (evt.key === 'v') {
+        clipboard?.getPasteValue().then(res => {
+          this.rightList = JSON.parse(res)
+        })
+      }
+    })
+  }
+}
+</script>
+```
