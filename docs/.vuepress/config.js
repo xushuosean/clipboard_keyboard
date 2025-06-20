@@ -20,6 +20,17 @@ module.exports = {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-3LPK9KXQ75');
-    `]
+    `],
+    [
+      'script', {}, `
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?773588e2732a2b3ffc55c8f04c49db60";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        `
+    ]
   ]
 }
