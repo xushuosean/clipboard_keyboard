@@ -13,12 +13,13 @@ module.exports = {
   chainWebpack(config) {
     config.resolve.alias.set('core-js/library/fn', 'core-js/features');
   },
-  plugins: [
-    [
-      '@vuepress/google-analytics',
-      {
-        'ga': 'G-3LPK9KXQ75' // UA-00000000-0
-      }
-    ]
+  head: [
+    ['script', { src: 'https://www.googletagmanager.com/gtag/js?id=G-3LPK9KXQ75' }],
+    ['script', {}, `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3LPK9KXQ75');
+    `]
   ]
 }
